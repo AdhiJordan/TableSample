@@ -23,7 +23,6 @@ export const errUpdateuser = (message) => ({
 
 
 export function getUserDetails(token){
-    console.log(token)
    return dispatch => {
         return axios.get("http://adhithyaprabhu.front.challenge.dev.monospacelabs.com/users")
             .then(response => {
@@ -32,8 +31,8 @@ export function getUserDetails(token){
                 }
             })
             .catch(error => {
-                //if(error.response)
-			    // dispatch(errDisplay("Invalid Token"));
+                if(error.response)
+			    dispatch(errDisplay(error.response.message));
 			});
     };
 }
@@ -44,14 +43,13 @@ export function updateUserData(index, userData, id){
        return dispatch => {
         return axios.put(updateUrl, userData)
             .then(response => {
-                console.log(response);
                 if(response){
                    dispatch(updateUserRecord(response.data, id))
                 }
             })
             .catch(error => {
-                //if(error.response)
-                // dispatch(errUpdateuser("Invalid Data"));
+                if(error.response)
+                dispatch(errUpdateuser(error.response.message));
             });
     };
 }

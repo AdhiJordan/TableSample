@@ -31,63 +31,63 @@ const actionsStyles = theme => ({
 });
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 3,
-    padding: "10px",
+    root: {
+      width: '100%',
+      marginTop: theme.spacing.unit * 3,
+      padding: "10px",
 
-  },
-  table: {
-    minWidth: 500,
-  },
-  tableWrapper: {
-    overflowX: 'auto',
-  },
-  root: {
-   flexGrow: 1,
-   background: "#F8F9FB"
-  },
-  highlight:
-    theme.palette.type === 'light'
-      ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
-      : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
-  input: {
-    margin: theme.spacing.unit,
-  },
-  spacer: {
-    flex: '1 1 100%',
-  },
-  actions: {
-    color: theme.palette.text.secondary,
-  },
-  title: {
-    flex: '1 1 100%',
-  },
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 220,
-  },
-  iconButton: {
-    padding: 10,
-    position: 'relative',
-    right: "45px"
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }
+    },
+    table: {
+      minWidth: 500,
+    },
+    tableWrapper: {
+      overflowX: 'auto',
+    },
+    root: {
+     flexGrow: 1,
+     background: "#F8F9FB"
+    },
+    highlight:
+      theme.palette.type === 'light'
+        ? {
+            color: theme.palette.secondary.main,
+            backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+          }
+        : {
+            color: theme.palette.text.primary,
+            backgroundColor: theme.palette.secondary.dark,
+          },
+    input: {
+      margin: theme.spacing.unit,
+    },
+    spacer: {
+      flex: '1 1 100%',
+    },
+    actions: {
+      color: theme.palette.text.secondary,
+    },
+    title: {
+      flex: '1 1 100%',
+    },
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      width: 220,
+    },
+    iconButton: {
+      padding: 10,
+      position: 'relative',
+      right: "45px"
+    },
+    paper: {
+      padding: theme.spacing.unit * 2,
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    }
 });
 class App extends React.Component {
   constructor(props){
@@ -109,8 +109,7 @@ class App extends React.Component {
     this.setState({
       rows: [...newProps.userDetails.user]
     }, () => {
-      
-      this.state.rows.map((user, idx) => {
+        this.state.rows.map((user, idx) => {
         let obj = {};
         if(user.active === true){
           obj['index'] = idx;
@@ -134,7 +133,7 @@ class App extends React.Component {
 
   selectAllUsers(event){
     if(event.target.checked === true){
-      this.state.rows.map((data) => {
+        this.state.rows.map((data) => {
         this.state.selectedId.push(data.name);
         this.setState({
           selectedId: this.state.selectedId
@@ -182,11 +181,8 @@ class App extends React.Component {
               <Table className={classes.table}>
                <TableHead>
                   <TableRow>
-                     <TableCell padding="checkbox">
-                      <Checkbox
-
-                        onChange={this.selectAllUsers.bind(this)}
-                      />
+                    <TableCell padding="checkbox">
+                      <Checkbox onChange={this.selectAllUsers.bind(this)} />
                     </TableCell>
                     <TableCell  style={{color: "#39628D"}}>Type</TableCell>
                     <TableCell  style={{color: "#39628D"}}>Name</TableCell>
@@ -210,7 +206,7 @@ class App extends React.Component {
                                 onChange={this.handleChange.bind(this, row.name, idx)}
                               />
                             </TableCell>
-                          <TableCell></TableCell>
+                          <TableCell><span className="boxDesign">CO</span></TableCell>
                           <TableCell>{row.name}</TableCell>
                           <TableCell>{row.email}</TableCell>
                           <TableCell>{row.phone}</TableCell>

@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
 
-
 export const userReducers = (state = { user: [] }, action) => {
     switch (action.type) {
         case "ADD_USER_DETAILS":
