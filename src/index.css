@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.activeUser{
+	position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.primaryText{
+  color: #39628D;
+}
+
+.bgColor{
+  background-color: #F8F9FB;
+}
